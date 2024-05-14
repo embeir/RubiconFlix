@@ -1,0 +1,44 @@
+.movie-list, .tv-show-list {
+    display: grid;               
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;                   
+    padding: 0;                  
+    list-style: none;            
+    max-width: 450px;
+  }
+  
+  .movie-list li, .tv-show-list li {
+    background-color: #fff;     
+    border: 1px solid #ccc;      
+    padding: 15px;              
+    border-radius: 5px;         
+    text-align: center;         
+  }
+  
+  .movie-list li img, .tv-show-list li img {
+    max-width: 100%;            
+    height: auto;               
+    margin-bottom: 10px;        
+  }
+  
+  .movie-list li h2, .tv-show-list li h2 {
+    font-size: 1.2em;           
+    margin-bottom: 5px;         
+  }
+  
+.movie-list a,  
+.tv-show-list a {
+  text-decoration: none; 
+}
+
+.movie-list a h2,
+.tv-show-list a h2 {
+  font-weight: normal;  
+  color: black; 
+  transition: color 0.3s ease; 
+}
+
+.movie-list a:hover h2,
+.tv-show-list a:hover h2 {
+  color: #073c74; 
+}
