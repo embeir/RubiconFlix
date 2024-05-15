@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import rubiconLogo from '../rubiconflix.png';
 import './LoadAnim.css';
 
+
+//added handling for initial animation for page loading
 const LoadingAnimation: React.FC = () => {
   const [isLoading, setIsLoading] = useState(true);
 

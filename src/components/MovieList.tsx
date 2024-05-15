@@ -8,6 +8,8 @@ interface MovieListProps {
   movies: MovieWithImage[];
 }
 
+
+//final destination of the data, in this components it gets rendered
 const MovieList: React.FC<MovieListProps> = ({ movies }) => {
   return (
     <ul className="movie-list"> 

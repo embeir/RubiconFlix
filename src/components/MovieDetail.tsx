@@ -8,6 +8,8 @@ const MovieDetails: React.FC = () => {
 
   const navigate = useNavigate(); 
 
+
+  //navigation on the back button
   const handleGoBack = () => {
     navigate(-1);
   };
@@ -22,6 +24,7 @@ const MovieDetails: React.FC = () => {
     return <div>Movie not found</div>;
   }
 
+  //used for retrieval of img
   const posterUrl = data.poster_path ? `http://localhost:3001/tmdb/image/w500${data.poster_path}` : "";
 
   return (

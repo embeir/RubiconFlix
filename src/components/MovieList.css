@@ -1,45 +1,40 @@
 .movie-list, .tv-show-list {
-    display: grid;               
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;                   
-    padding: 0;                  
-    list-style: none;             
-    max-width: 450px;
-  }
-  
-  .movie-list li, .tv-show-list li {
-    background-color: var(--list-item-background-color);     
-    border: 1px solid #ccc;      
-    padding: 15px;               
-    border-radius: 5px;          
-    text-align: center;          
-  }
-  
-  .movie-list li img, .tv-show-list li img {
-    max-width: 100%;            
-    height: auto;               
-    margin-bottom: 10px;        
-  }
-  
-  .movie-list li h2, .tv-show-list li h2 {
-    font-size: 1.2em;           
-    margin-bottom: 5px;         
-  }
-  
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;      
+  padding: 0;
+  list-style: none;
+  max-width: 90%;   
+  margin: 0 auto; 
+}
 
-.movie-list a, 
-.tv-show-list a {
+.movie-list li, .tv-show-list li {
+  background-color: var(--list-item-background-color);
+  border: none;         
+  padding: 16px;           
+  border-radius: 8px;      
+  text-align: center;     
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  transition: transform 0.2s ease; 
+}
+
+.movie-list li:hover, .tv-show-list li:hover {
+  transform: translateY(-8px); 
+}
+
+.movie-list li img, .tv-show-list li img {
+  max-width: 100%;
+  height: 350px;      
+  object-fit: cover;  
+  border-radius: 10px 10px 10px 10px;  
+}
+
+.movie-list li h2, .tv-show-list li h2 {
+  font-size: 1.1em;       
+  margin: 10px 0;         
+  color: var(--text-color);  
+}
+
+.movie-list a, .tv-show-list a {
   text-decoration: none; 
-}
-
-.movie-list a h2,
-.tv-show-list a h2 {
-  font-weight: normal;  
-  color: black; 
-  transition: color 0.3s ease; 
-}
-
-.movie-list a:hover h2,
-.tv-show-list a:hover h2 {
-  color: #073c74; 
 }

@@ -12,6 +12,8 @@ import LoadingAnimation from "./components/LoadAnim.tsx";
 
 
 const Main: React.FC = () => {
+
+  //imports from the context 
   const {
     movies,
     tvShows,
@@ -26,6 +28,7 @@ const Main: React.FC = () => {
 
   const location = useLocation();
 
+  //render the data after the initial load, and call for data fetch after 3 or more chars in the searchTerm
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -59,6 +62,7 @@ const Main: React.FC = () => {
     setActiveTab(tab);
   };
 
+  //setting the searchTerm
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
   };
