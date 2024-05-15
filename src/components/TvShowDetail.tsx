@@ -22,9 +22,7 @@ const ShowDetails: React.FC = () => {
     return <div>TV Show not found</div>;
   }
 
-  const posterUrl = data.poster_path
-    ? `http://localhost:3001/tmdb/image/w500${data.poster_path}`
-    : "";
+  const posterUrl = data.poster_path ? `http://localhost:3001/tmdb/image/w500${data.poster_path}` : "";
 
   return (
     <div className="show-details-container">
