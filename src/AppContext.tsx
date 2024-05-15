@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 import { Movie, TvShow } from './Models';
 
 interface MovieWithImage extends Movie {
@@ -16,8 +16,10 @@ interface AppContextValue {
   activeTab: 'movies' | 'tvShows';
   setSearchTerm: (searchTerm: string) => void;
   setActiveTab: (activeTab: 'movies' | 'tvShows') => void;
-  setMovies: React.Dispatch<React.SetStateAction<MovieWithImage[]>>; // Add setMovies
-  setTvShows: React.Dispatch<React.SetStateAction<TvShowWithImage[]>>; // Add setTvShow
+  setMovies: React.Dispatch<React.SetStateAction<MovieWithImage[]>>;
+  setTvShows: React.Dispatch<React.SetStateAction<TvShowWithImage[]>>;
+  isLoading: boolean;
+  setIsLoading: (isLoading: boolean) => void;
 }
 
 const AppContext = createContext<AppContextValue | undefined>(undefined);
@@ -27,6 +29,14 @@ export const AppProvider: React.FC = ({ children }) => {
   const [tvShows, setTvShows] = useState<TvShowWithImage[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [activeTab, setActiveTab] = useState<'movies' | 'tvShows'>('tvShows');
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+  }, []); 
+
 
   return (
     <AppContext.Provider
@@ -35,10 +45,12 @@ export const AppProvider: React.FC = ({ children }) => {
         tvShows,
         searchTerm,
         activeTab,
+        isLoading,
         setSearchTerm,
         setActiveTab,
         setMovies,  // Include setMovies in the context value
-        setTvShows
+        setTvShows,
+        setIsLoading,
       }}
     >
       {children}

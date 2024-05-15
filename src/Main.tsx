@@ -17,6 +17,7 @@ const Main: React.FC = () => {
     tvShows,
     searchTerm,
     activeTab,
+    isLoading,
     setActiveTab,
     setSearchTerm,
     setMovies, 
@@ -24,12 +25,8 @@ const Main: React.FC = () => {
   } = useAppContext();
 
   const location = useLocation();
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 3000);
     const fetchData = async () => {
       try {
         if (searchTerm.length >= 3) {
