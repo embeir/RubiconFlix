@@ -26,7 +26,7 @@ export const AppProvider: React.FC = ({ children }) => {
   const [movies, setMovies] = useState<MovieWithImage[]>([]);
   const [tvShows, setTvShows] = useState<TvShowWithImage[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
-  const [activeTab, setActiveTab] = useState<'movies' | 'tvShows'>('movies');
+  const [activeTab, setActiveTab] = useState<'movies' | 'tvShows'>('tvShows');
 
   return (
     <AppContext.Provider

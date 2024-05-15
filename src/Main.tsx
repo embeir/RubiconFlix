@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route, useLocation  } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import MovieList from './components/MovieList.tsx';
 import TvShowList from './components/ShowList.tsx';
 import { fetchShowsWithImages, fetchMoviesWithImages } from './AppDataFetch.tsx';
@@ -19,8 +19,8 @@ const Main: React.FC = () => {
     activeTab,
     setActiveTab,
     setSearchTerm,
-    setMovies,  // <-- Correct function from context
-    setTvShows, // <-- Correct function from context
+    setMovies, 
+    setTvShows, 
   } = useAppContext();
 
   const location = useLocation();
@@ -29,15 +29,25 @@ const Main: React.FC = () => {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
-  }, 3000);
+    }, 3000);
     const fetchData = async () => {
       try {
-        if (activeTab === "movies") {
-          const movies = await fetchMoviesWithImages(searchTerm);
-          setMovies(movies);
-        } else if (activeTab === "tvShows") {
-          const tvShows = await fetchShowsWithImages(searchTerm);
-          setTvShows(tvShows);
+        if (searchTerm.length >= 3) {
+          if (activeTab === "movies") {
+            const movies = await fetchMoviesWithImages(searchTerm);
+            setMovies(movies);
+          } else if (activeTab === "tvShows") {
+            const tvShows = await fetchShowsWithImages(searchTerm);
+            setTvShows(tvShows);
+          }
+        } else {
+          if (activeTab === "movies") {
+            const movies = await fetchMoviesWithImages();
+            setMovies(movies);
+          } else if (activeTab === "tvShows") {
+            const tvShows = await fetchShowsWithImages();
+            setTvShows(tvShows);
+          }
         }
       } catch (error) {
         console.error("Error fetching data:", error);
