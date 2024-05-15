@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { useMovieDetails } from "./AppDataFetch.tsx";
+import { useMovieDetails } from "../AppDataFetch.tsx";
 import "./MovieDetail.css"
 
 const MovieDetails: React.FC = () => {

@@ -1,8 +1,8 @@
 import React from 'react';
-import { MovieWithImage } from './Models';
+import { MovieWithImage } from '../Models';
 import { Link } from 'react-router-dom';
 import './MovieList.css';
-import placeholderImage from './placeholderIMG.jpg';
+import placeholderImage from '../placeholderIMG.jpg';
 
 interface MovieListProps {
   movies: MovieWithImage[];

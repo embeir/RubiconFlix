@@ -1,8 +1,8 @@
 import React from 'react';
-import { TvShowWithImage } from './Models';
+import { TvShowWithImage } from '../Models';
 import { Link } from 'react-router-dom';
 import './ShowList.css';
-import placeholderImage from './placeholderIMG.jpg';
+import placeholderImage from '../placeholderIMG.jpg';
 
 interface ShowListProps {
   tvShows: TvShowWithImage[];

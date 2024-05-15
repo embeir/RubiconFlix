@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, useLocation  } from "react-router-dom";
-import MovieList from './MovieList.tsx';
-import TvShowList from './ShowList.tsx';
+import MovieList from './components/MovieList.tsx';
+import TvShowList from './components/ShowList.tsx';
 import { fetchShowsWithImages, fetchMoviesWithImages } from './AppDataFetch.tsx';
 import { useAppContext } from './AppContext.tsx';
 import './Main.css';
-import MovieDetails from "./MovieDetail.tsx";
-import ShowDetails from './TvShowDetail.tsx';
+import MovieDetails from "./components/MovieDetail.tsx";
+import ShowDetails from './components/TvShowDetail.tsx';
 import ThemeToggle from './ThemeToggle.tsx';
-import LoadingAnimation from "./LoadAnim.tsx";
+import LoadingAnimation from "./components/LoadAnim.tsx";
 
 
 const Main: React.FC = () => {

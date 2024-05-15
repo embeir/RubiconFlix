@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import rubiconLogo from './rubiconflix.png';
+import rubiconLogo from '../rubiconflix.png';
 import './LoadAnim.css';
 
 const LoadingAnimation: React.FC = () => {

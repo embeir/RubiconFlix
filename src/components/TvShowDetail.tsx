@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { useShowDetails } from "./AppDataFetch.tsx";
+import { useShowDetails } from "../AppDataFetch.tsx";
+import "./MovieDetail.css"
 
 const ShowDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
