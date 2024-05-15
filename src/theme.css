@@ -12,6 +12,9 @@
   --primary-color: #0056b3; 
   --accent-color: #d9534f;   
   --border-color: #444;  
+  input {
+    color: white; 
+  }
 }
 
 .theme-toggle {

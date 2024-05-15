@@ -31,7 +31,8 @@
     text-align: justify;
   }
   
-  .movie-details-container, .show-details-container button { 
+  .movie-details-container button,
+  .show-details-container button { 
     background-color: transparent; 
     border: none;                 
     padding: 10px 20px;           
@@ -45,6 +46,7 @@
     left: 20px;
   }
   
-  .movie-details-container, .show-details-container button:hover {
+  .movie-details-container button:hover,
+  .show-details-container button:hover {
     border-bottom-color: #007bff;  
   }
